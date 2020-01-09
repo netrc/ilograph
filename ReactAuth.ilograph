@@ -4,7 +4,8 @@ resources:
   color: navy
   children:
   - name: React App
-    subtitle:  main resource
+    subtitle:  elastic PCF app
+    style: plural
     
   - name: API Gateway
     subtitle: spring gw
@@ -16,6 +17,10 @@ resources:
   - name: AF DB
     subtitle: MongoDB
     color: firebrick
+    children:
+    - name: serverA
+    - name: serverB
+    - name: serverC
     
 perspectives:
 - name: AuthFlow
