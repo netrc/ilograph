@@ -1,0 +1,47 @@
+resources:
+- name: AmazeFoto
+  subtitle: EA Demo Application
+  color: navy
+  children:
+  - name: React App
+    subtitle:  main resource
+    
+  - name: API Gateway
+    subtitle: spring gw
+    description: This is an extended description of Resource B
+    
+  - name: AF microservice
+    subtitle: A third resource
+    
+  - name: Resource D
+    subtitle: A fourth resource
+    color: firebrick
+    
+perspectives:
+- name: AuthFlow
+  defaultRelationLabel: Depends on
+  color: royalblue
+  relations:
+  - from: React App
+    to: API Gateway
+    label: 1. Request
+
+  - from: API Gateway
+    to: React App
+    label: 2. Basic Auth
+
+    
+  - from: API Gateway
+    to: AF microservice
+    label: 4. API Key
+    
+  - from: AF microservice
+    to: API Gateway
+    label: 5. response
+  notes: |-
+    Welcome to your ilograph.
+
+    Your ilograph comes pre-populated with resources and a sample perspective. **The editable source is in the window to the left**.
+
+    Need Help? Check out the [introduction to IDL](https://blog.ilograph.com/posts/idl-1/) and the [IDL Spec](https://blog.ilograph.com/posts/idl-spec/). Additional resources are available on the [ilograph blog](https://blog.ilograph.com/).
+
