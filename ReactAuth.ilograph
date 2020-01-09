@@ -1,5 +1,5 @@
 resources:
-- name: AmazeFoto
+- name: AF
   subtitle: EA Demo Application
   color: navy
   children:
@@ -13,8 +13,8 @@ resources:
   - name: AF microservice
     subtitle: A third resource
     
-  - name: Resource D
-    subtitle: A fourth resource
+  - name: AF DB
+    subtitle: MongoDB
     color: firebrick
     
 perspectives:
@@ -30,7 +30,6 @@ perspectives:
     to: React App
     label: 2. Basic Auth
 
-    
   - from: API Gateway
     to: AF microservice
     label: 4. API Key
@@ -38,10 +37,20 @@ perspectives:
   - from: AF microservice
     to: API Gateway
     label: 5. response
+    
+  - from: AF microservice
+    to: AF DB
+    arrowDirection: bidirectional
+    label: get/put
+    
   notes: |-
-    Welcome to your ilograph.
-
-    Your ilograph comes pre-populated with resources and a sample perspective. **The editable source is in the window to the left**.
-
+    The AF/React Auth Flow
+    
+    The React App runs as a html/javascript service
+    
+    The API Gateway is a purpose-built Spring Gateway java service
+    
+    The AF microservice responds to picture list/get/post requests
+    
     Need Help? Check out the [introduction to IDL](https://blog.ilograph.com/posts/idl-1/) and the [IDL Spec](https://blog.ilograph.com/posts/idl-spec/). Additional resources are available on the [ilograph blog](https://blog.ilograph.com/).
 
